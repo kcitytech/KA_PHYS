@@ -1,16 +1,13 @@
 # Karim Ahmed
 # Exercise 2.4
-# Version 1.0.0
 # Useful resource: WSU: Space, Time, and Einstein with Brian Greene - https://www.youtube.com/watch?v=CKJuC5CUMgU
-
-# Warning: Command line arguments are not currently validated.
 
 import math
 import argparse
 
 def promptDistance():
 	
-	# Create variable for distance, -1 will denote invalid value.
+	# Store distance. -1 will denote invalid value.
 	distance = -1
 	
 	# Prompt user until valid distance is provided.
@@ -25,13 +22,13 @@ def promptDistance():
 		# If height is invalid then prompt user to enter valid number.
 		if distance < 0:
 			distance = -1
-			print(" Invalid height: Height must be zero or positive real number.")
+			print(" Invalid distance: Distance must be zero or positive real number.")
 			
 	return distance
 
 def promptSpeed():
 	
-	# Create variable for speed , -1 will denote invalid value.
+	# Store speed. -1 will denote invalid value.
 	speed = -1
 	
 	# Prompt user until valid distance is provided.
@@ -50,6 +47,16 @@ def promptSpeed():
 	
 	return speed
 
+def isValidArgumentDistance(distance):
+	
+	# Ensure height (input as float) is positive (or zero).
+	return distance >= 0
+
+def isValidArgumentSpeed(speed):
+	
+	# Ensure height (input as float) is positive (or zero).
+	return speed >= 0 and speed <= 1
+
 # Main function
 if __name__ == "__main__":
 	
@@ -62,16 +69,34 @@ if __name__ == "__main__":
 	# Display program info.
 	print("Exercise 2.4 - Spaceship")
 	
-	# Use passed in value if given
+	# Use passed in value if given for distance.
 	distance = args.distance
 	if args.distance is None:
 		distance = promptDistance()
 		
-	# Use passed in value if given
+	elif isValidArgumentDistance(args.distance):
+		
+		# Use passed in float for distance.
+		distance = args.distance
+	
+	else:
+		# When used non-interactively exit if flag argument is invalid.
+		raise ValueError('Invalid distance: Distance must be zero or positive real number.')
+
+	# Use passed in value if given for speed.
 	speed = args.speed
 	if args.speed is None:
 		speed = promptSpeed()
+		
+	elif isValidArgumentSpeed(args.speed):
 			
+			# Use passed in float for distance.
+			speed = args.speed
+			
+	else:
+		# When used non-interactively exit if flag argument is invalid.
+		raise ValueError(' Invalid speed: Speed must be between zero and one, exclusive.')
+					
 	# Calculate perceived travel time from earth observer.
 	earthObserverTimeYears = distance/speed
 	
@@ -82,5 +107,5 @@ if __name__ == "__main__":
 	spaceshipObserverTimeYears = earthObserverTimeYears/lorentzFactor
 	
 	# Display time experienced by observers.
-	print("The observer on earth expects the spaceship to reach its target in {} years.".format(round(earthObserverTimeYears,4)))
-	print("The observer on the spaceship perceives {} years elapsing before reaching the planet.".format(round(spaceshipObserverTimeYears,4)))
+	print("The observer on earth expects the spaceship to reach its target in ~{} years.".format(round(earthObserverTimeYears,4)))
+	print("The observer on the spaceship perceives ~{} years elapsing before reaching the planet.".format(round(spaceshipObserverTimeYears,4)))

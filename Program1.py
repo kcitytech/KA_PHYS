@@ -1,21 +1,18 @@
 # Karim Ahmed
 # Exercise 2.1
-# Version 1.0.0
-
-# Warning: Command line arguments are not currently validated.
 
 import math
 import argparse
 
 def promptHeight():
 
-	# Create variable for height of ball, -1 will denote invalid value.
+	# Store height of ball. -1 denotes invalid value.
 	height = -1
 	
 	# Prompt user until valid height is provided.
 	while height == -1:
 		
-		# Prompt user for height and flag invalid string value.
+		# Prompt user for height and flag invalid input.
 		try:
 			height = float(input("Height of ball (meters):"))
 		except:
@@ -28,7 +25,11 @@ def promptHeight():
 	
 	return height
 
-# Main function
+def isValidArgumentHeight(height):
+	
+	# Ensure height (input as float) is positive (or zero).
+	return height >= 0
+
 if __name__ == "__main__":
 
 	# Add argument to allow skipping interactive elements from command line.
@@ -39,17 +40,25 @@ if __name__ == "__main__":
 	# Display program info
 	print("Exercise 2.1 - Ball Drop")
 	
-	# Use passed in height if given, otherwise prompt for height.
+	# Store height of ball. -1 denotes invalid value.
 	height = -1
-	
-	# Use passed in value if given for height.
-	height = args.height
+		
+	# If program is called interactively prompt for height.
 	if args.height is None:
 		height = promptHeight()
-
+		
+	elif isValidArgumentHeight(args.height):
+		
+		# Use passed in float for height.
+		height = args.height
+		
+	else:
+		# When used non-interactively exit if flag argument is invalid.
+		raise ValueError('Height must be positive integer/decimal value.')
+		
 	# Calculate time for ball to fall the specified distance (assuming no air resistance).
 	LOCAL_GRAVITY = 9.81
-	timeSeconds    = math.sqrt((2*height)/LOCAL_GRAVITY)
+	timeSeconds   = math.sqrt((2*height)/LOCAL_GRAVITY)
 		
 	# Display time for ball to hit, rounded to 4 decimal places.
 	print("The ball will take approximately {} seconds to hit the ground.".format(round(timeSeconds,4)))
