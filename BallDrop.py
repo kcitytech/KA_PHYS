@@ -1,5 +1,5 @@
-# Karim Ahmed
-# Exercise 2.1
+#!/usr/bin/env python3
+# Exercise 2.1: Another ball dropped from a tower
 
 import math
 import argparse
@@ -37,7 +37,7 @@ if __name__ == "__main__":
 	parser.add_argument('--height', type=float, help='Height of ball (in meters)')
 	args = parser.parse_args()
 	
-	# Display program info
+	# Display program info.
 	print("Exercise 2.1 - Ball Drop")
 	
 	# Store height of ball. -1 denotes invalid value.

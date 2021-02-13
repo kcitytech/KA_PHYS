@@ -1,4 +1,4 @@
-# Karim Ahmed
+#!/usr/bin/env python3
 # Exercise 2.4
 # Useful resource: WSU: Space, Time, and Einstein with Brian Greene - https://www.youtube.com/watch?v=CKJuC5CUMgU
 

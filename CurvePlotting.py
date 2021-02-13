@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Exercise 3.2: Curve plotting
 
 import matplotlib.pyplot as plt
 import numpy as np
