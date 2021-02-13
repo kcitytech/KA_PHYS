@@ -13,9 +13,7 @@ def catalan(n):
 def promptCatalanInput():
     
     # Prompt for input.
-    n = input()
-    
-    return int(n)
+    return int(input("Catalan(n):"))
 
 def unitTest():
 
@@ -30,12 +28,8 @@ def unitTest():
     results = [catalan(index) for index in range(0,30+1)]
     assert(expected == results)
 
-# Test for any value.
-print("Catalan(n):")
-
 # Prompt user for input.
-n = promptCatalanInput()
+print(catalan(promptCatalanInput()))
 
-print(catalan(n))
-
+# Perform unit test to validate.
 unitTest()
