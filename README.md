@@ -114,3 +114,27 @@ Roots-Standard Formula:  (-2+1j) (-2-1j)
 Roots-Alternate Formula: (-2-1j) (-2+1j)
 Roots-Numpy:             (-2+1j) (-2-1j)
 ```
+
+### Integration.py
+```
+python3 Integration.py 
+Trapezoidal method = 4.50656            (  10 slices)
+Trapezoidal method = 4.401066656        ( 100 slices)
+Trapezoidal method = 4.4000106666656    (1000 slices)
+  Simpson's method = 4.400426666666667  (  10 slices)
+  Simpson's method = 4.400000042666668  ( 100 slices)
+  Simpson's method = 4.400000000004266  (1000 slices)
+Simpson's Error <    0.00002666666666666373
+```
+
+### QuantumHarmonicOscillator.py
+'''
+time python3 QuantumHarmonicOscillator.py 
+Average Energy = 99.9554313409348 (1000 iterations)
+Average Energy = 100.000833331944 (1000000 iterations)
+Average Energy = 99.0107219866263 (1000000000 iterations)
+
+real	15m2.296s
+user	0m34.584s
+sys	1m27.088s
+'''
