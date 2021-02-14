@@ -65,3 +65,52 @@ python3 NumpyArrays.py
 [1.         1.33333333 1.5        1.6       ]
 [1 1 1 1]
 ```
+
+### MachinePrecision.py
+```
+python3 MachinePrecision.py 
+2.220446049250313e-16
+```
+
+### Float.py
+```
+python3 Float.py
+<class 'float'>
+        0.10000000000000000555
+```
+
+### Difference.py
+```
+python3 Difference.py
+1.4210854715202004
+1.4142135623730951
+```
+
+### Quadratic.py
+```
+python3 Quadratic.py
+Solution for a=0.001, b=1000, c=0.001:
+Roots-Standard Formula:  -999999.999999 -9.99989424599e-07
+Roots-Alternate Formula: -1000010.57551 -1e-06
+Roots-Numpy:             -999999.999999 -1e-06
+a:1
+b:-8
+c:12
+Roots-Standard Formula:  2.0 6.0
+Roots-Alternate Formula: 2.0 6.0
+Roots-Numpy:             2.0 6.0
+```
+
+```
+python3 Quadratic.py
+Solution for a=0.001, b=1000, c=0.001:
+Roots-Standard Formula:  -999999.999999 -9.99989424599e-07
+Roots-Alternate Formula: -1000010.57551 -1e-06
+Roots-Numpy:             -999999.999999 -1e-06
+a:1
+b:4
+c:5
+Roots-Standard Formula:  (-2+1j) (-2-1j)
+Roots-Alternate Formula: (-2-1j) (-2+1j)
+Roots-Numpy:             (-2+1j) (-2-1j)
+```
