@@ -128,7 +128,7 @@ Simpson's Error <    0.00002666666666666373
 ```
 
 ### QuantumHarmonicOscillator.py
-'''
+```
 time python3 QuantumHarmonicOscillator.py 
 Average Energy = 99.9554313409348 (1000 iterations)
 Average Energy = 100.000833331944 (1000000 iterations)
@@ -137,4 +137,4 @@ Average Energy = 99.0107219866263 (1000000000 iterations)
 real	15m2.296s
 user	0m34.584s
 sys	1m27.088s
-'''
+```
