@@ -2,6 +2,8 @@
 
 python3 should be used to run scripts to avoid issues with special characters in comments.
 
+## PHYS 4150
+
 ### BallDrop.py
 ```
 python3 BallDrop.py
@@ -34,4 +36,32 @@ The observer on the spaceship perceives ~1.4249 years elapsing before reaching t
 #### CurvePlotting.py
 ```
 python3 CurvePlotting.py
+```
+
+![CurvePlotting](Output/CurvePlotting.png)
+
+## PHYS 4100
+
+### BallDropTime.py
+```
+python3 BallDropTime.py 
+Example 2.1
+Height of tower (meters):10
+  Time Elapsed (seconds):1
+The ball is ~5.095 meters above the ground.
+```
+
+### Catalan.py
+```
+python3 Catalan.py
+Catalan(n):20
+6564120420
+```
+
+### NumpyArrays.py
+```
+python3 NumpyArrays.py 
+[3. 3. 3. 3.]
+[1.         1.33333333 1.5        1.6       ]
+[1 1 1 1]
 ```
