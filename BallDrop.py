@@ -33,7 +33,7 @@ def isValidArgumentHeight(height):
 if __name__ == "__main__":
 
 	# Add argument to allow skipping interactive elements from command line.
-	parser = argparse.ArgumentParser(description = "Parser")
+	parser = argparse.ArgumentParser(description = "Calculate time for ball to fall specified height.")
 	parser.add_argument('--height', type=float, help='Height of ball (in meters)')
 	args = parser.parse_args()
 	

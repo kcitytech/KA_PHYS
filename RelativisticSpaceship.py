@@ -61,7 +61,7 @@ def isValidArgumentSpeed(speed):
 if __name__ == "__main__":
 	
 	# Add argument to allow skipping interactive elements from command line.
-	parser = argparse.ArgumentParser(description = "Parser")
+	parser = argparse.ArgumentParser(description = "Calculate time experienced by observers for relativistic speeds.")
 	parser.add_argument('--distance', type=float, help='Distance (in lightyears)')
 	parser.add_argument('--speed'   , type=float, help='Speed of spacecraft (in c)')
 	args = parser.parse_args()
