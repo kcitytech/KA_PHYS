@@ -40,6 +40,39 @@ python3 CurvePlotting.py
 
 ![CurvePlotting](Output/CurvePlotting.png)
 
+#### CalculatingDerivatives.py
+```
+python3 CalculatingDerivatives.py 
+Example 4.3
+
+Derivative at x = 1 delta = 0.01: (truncated)
+
+	Approximation: 1.010000
+	Actual Stored: 1.000000
+
+NOTE: Expect approximation to differ significantly with large delta. Reducing delta will result in improved accuracy until a point at which error will compound due to machine precision.
+
+Graphs displayed show as delta decreases error will correspondingly decrease. 
+    When delta becomes to small error will increase due to accumulation of errors due to machine precision.
+```
+```
+python3 CalculatingDerivatives.py --x 2 --delta 0.0001
+Example 4.3
+
+Derivative at x = 2.0 delta = 0.0001: (truncated)
+
+	Approximation: 3.000100
+	Actual Stored: 3.000000
+
+NOTE: Expect approximation to differ significantly with large delta. Reducing delta will result in improved accuracy until a point at which error will compound due to machine precision.
+
+Graphs displayed show as delta decreases error will correspondingly decrease. 
+    When delta becomes to small error will increase due to accumulation of errors due to machine precision.
+```
+
+![DeltasSpecific](Output/DeltasSpecific.png)
+![DeltasRange](Output/DeltasRange.png)
+
 ## PHYS 4100
 
 ### BallDropTime.py
