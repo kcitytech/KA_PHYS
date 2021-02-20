@@ -138,3 +138,9 @@ real	15m2.296s
 user	0m34.584s
 sys	1m27.088s
 ```
+
+### Gaussian.py
+```
+python3 Gaussian.py 
+Value: 4.400000000000037
+```
