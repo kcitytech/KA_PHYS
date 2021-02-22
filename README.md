@@ -33,14 +33,14 @@ The observer on earth expects the spaceship to reach its target in ~10.101 years
 The observer on the spaceship perceives ~1.4249 years elapsing before reaching the planet.
 ```
 
-#### CurvePlotting.py
+### CurvePlotting.py
 ```
 python3 CurvePlotting.py
 ```
 
 ![CurvePlotting](Output/CurvePlotting.png)
 
-#### CalculatingDerivatives.py
+### CalculatingDerivatives.py
 ```
 python3 CalculatingDerivatives.py 
 Example 4.3
@@ -73,7 +73,7 @@ Graphs displayed show as delta decreases error will correspondingly decrease.
 ![DeltasSpecific](Output/DeltasSpecific.png)
 ![DeltasRange](Output/DeltasRange.png)
 
-#### CalculatingIntegrals.py
+### CalculatingIntegrals.py
 ```
 python3 CalculatingIntegrals.py 
 Calculated: 1.56913425554925 (100 iterations)
