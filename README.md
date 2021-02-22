@@ -73,6 +73,15 @@ Graphs displayed show as delta decreases error will correspondingly decrease.
 ![DeltasSpecific](Output/DeltasSpecific.png)
 ![DeltasRange](Output/DeltasRange.png)
 
+#### CalculatingIntegrals.py
+```
+python3 CalculatingIntegrals.py 
+Calculated: 1.56913425554925 (100 iterations)
+Calculated: 1.570796326742306 (10000000 iterations)
+Actual:     1.57079632679489661923132169163975144209858469968
+Using 10 million iterations the value calculated is accurate to 10 decimal places.
+```
+
 ## PHYS 4100
 
 ### BallDropTime.py
