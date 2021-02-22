@@ -177,3 +177,9 @@ sys	1m27.088s
 python3 Gaussian.py 
 Value: 4.400000000000037
 ```
+
+### CentralDifference.py
+```
+python3 CentralDifference.py
+![CentralDifference](Output/CentralDifference.png)
+```
