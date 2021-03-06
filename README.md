@@ -89,8 +89,8 @@ sys	0m0.195s
 ### Stefan-Boltzmann.py
 ```
 python3 Stefan-Boltzmann.py 
-WARNING: TODO: Units returned do not match.
-Calculated: 5.670374419184432e-08 J / (m2 s)
+WARNING: Units returned do not match.
+Calculated: 5.670374419184432e-08 J / (K4 m2 s)
 Scipy:      5.6703744191844314e-08 W / (K4 m2)
 NIST:       5.670374419... x 10-8 W m-2 K-4
 ```
