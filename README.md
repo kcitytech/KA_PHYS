@@ -96,6 +96,13 @@ NIST:       5.670374419... x 10-8 W m-2 K-4
 ```
 ![PlancksLaw](Output/PlancksLaw.png)
 
+### Electric.py
+```
+python 3 Electric.py
+```
+![Electric-Points](Output/Electric-Points.png)
+![Electric-Arrow](Output/Electric-Arrow.png)
+
 ## PHYS 4100
 
 ### BallDropTime.py
