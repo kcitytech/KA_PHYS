@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Exercise 5/12: The Stefan–Boltzmann constant
+# Exercise 5.12: The Stefan–Boltzmann constant
 #
 # Note: External file is required to run - gaussxw.py.
 # http://www-personal.umich.edu/~mejn/computational-physics/gaussxw.py
@@ -8,9 +8,6 @@
 # https://en.wikipedia.org/wiki/Planck%27s_law - 'Angular frequency'
 # https://ps.uci.edu/~cyu/p115A/LectureNotes/Lecture14/html_version/lecture14.html
 
-# WARNING: The units returned do not match, the issue is likely in thermalEnergyPerSecond() or radiatedEnergyBlackBody().
-# TODO: Fix issue with wrong units being calculated.
-
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy   import constants
@@ -18,23 +15,25 @@ from astropy import constants as const
 from astropy import units     as u
 import gaussxw
 
+print("Exercise 5.12: The Stefan–Boltzmann constant")
+
 # Calculate thermal energy per second given Omega - angular frequency & T - Temperature (Kelvin).
 def thermalEnergyPerSecond(omega, T):
     
-    # Import physical constants from astropy. Import pi (dimensionless) from numpy.
-    hbar = const.hbar   # h/2pi
+    # Import physical constants from astropy and pi from numpy (dimensionless).
+    hbar = const.hbar
     pi   = constants.pi
     c    = const.c
     kb   = const.k_B
     
-    # Apply dimensions to arguments.
-    omega *= 1 #u.rad / u.s, Is this dimensionless?
+    # Apply units to arguments.
+    omega *= 1 # TODO: Is this dimensionless? u.rad / u.s?
     T     *= u.K # Kelvin
     
     # Create equation using dimensioned constants.
     a = hbar /( 4*(pi**2) * (c**2) )
     b = ( hbar * omega )/( kb * T) # (Joules/Sec) * omega  / (Joules)
-    c = omega**3 / (b.unit * (np.exp(b.value) - 1)) # Check this.
+    c = omega**3 / (b.unit * (np.exp(b.value) - 1))
     
     # Create combined equation.
     equation = a * c
@@ -44,9 +43,9 @@ def thermalEnergyPerSecond(omega, T):
 # Calculate energy radiated from a black body with a given x and temperature (in Kelvin).
 def radiatedEnergyBlackBody(x, T):
     
-    # Apply units.
-    x *= 1
-    T *= u.K
+    # Apply units to passed in arguments.
+    x *= 1   # Assuming dimensionless
+    T *= u.K # Kelvin
     
     # Specify constants.
     kb   = const.k_B
@@ -54,14 +53,14 @@ def radiatedEnergyBlackBody(x, T):
     pi   = constants.pi
     c    = const.c
         
-    # Create equation.
+    # Create equation for radiated energy.
     a      = ((kb**4)*(T**4)) / (4*(pi**2)*(c**2)*(hbar**3))
     b      = integrateBlackBodyComponent(x)
     result = a * b
     
     return result
 
-# Define function to integrate.
+# Define function to be integrated.
 def f(x):
     return x**3 / (np.exp(x) - 1)
 
@@ -80,7 +79,7 @@ def integrateBlackBodyComponent(x):
     integrationPoints, weights = gaussxw.gaussxwab(N , a, b)
     result                     = (np.array(weights * f(integrationPoints))).sum()
     
-    return result #~6.4939394022668291
+    return result # ~6.4939394022668291
 
 # Generate graph visualization.
 def visualizeEquation():
@@ -105,14 +104,15 @@ def calculateStefanBoltzmannConstant(omega, temperature):
     
     return stefanBoltzmanConstant
 
-# Compute constant to compare to expected value.
-calculatedValue = calculateStefanBoltzmannConstant(1, 4000)
+# Compute constant converting J/s component to watts to match known values (units are equivalent).
+calculatedValue            = calculateStefanBoltzmannConstant(1, 4000)
+calculatedValueCommonUnits = calculatedValue.to(u.W/(u.K**4 * u.m**2))
 
 # Display results. NIST value sourced from https://physics.nist.gov/cgi-bin/cuu/Value?sigma .
-print("WARNING: Units returned do not match.")
-print("Calculated: {}".format(calculatedValue))
-print("Scipy:      {}".format(const.sigma_sb))
-print("NIST:       5.670374419... x 10-8 W m-2 K-4")
+print("Calculated             : {}".format(calculatedValue))
+print("Calculated (same units): {}".format(calculatedValueCommonUnits))
+print("Scipy                  : {}".format(const.sigma_sb))
+print("NIST                   : 5.670374419... x 10-8 W m-2 K-4")
 
 # Plot graph to visualize equation.
 visualizeEquation()

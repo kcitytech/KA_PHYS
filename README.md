@@ -99,6 +99,9 @@ NIST:       5.670374419... x 10-8 W m-2 K-4
 ### Electric.py
 ```
 python 3 Electric.py
+
+## NOTE: OUTPUT HAS NOT BEEN UPDATED FOR RECENT CODE CHANGES.
+
 ```
 ![Electric-Points](Output/Electric-Points.png)
 ![Electric-Arrow](Output/Electric-Arrow.png)
