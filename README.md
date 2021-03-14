@@ -87,6 +87,9 @@ sys	0m0.195s
 ```
 
 ### Stefan-Boltzmann.py
+
+# NOTE: OUTPUT HAS NOT BEEN UPDATED FOR RECENT CODE CHANGES.
+
 ```
 python3 Stefan-Boltzmann.py 
 WARNING: Units returned do not match.
@@ -100,7 +103,7 @@ NIST:       5.670374419... x 10-8 W m-2 K-4
 ```
 python 3 Electric.py
 
-## NOTE: OUTPUT HAS NOT BEEN UPDATED FOR RECENT CODE CHANGES.
+# NOTE: OUTPUT HAS NOT BEEN UPDATED FOR RECENT CODE CHANGES.
 
 ```
 ![Electric-Points](Output/Electric-Points.png)
