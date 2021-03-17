@@ -111,7 +111,7 @@ python3 Electric.py
 python3 Electric.py --widecolor
 5.21: Electric field of a charge distribution
 ```
-![Electric-Widecolor](Output/Electric-Points-Widecolor.png)
+![Electric-Points-Widecolor](Output/Electric-Points-Widecolor.png)
 ![Electric-Arrow](Output/Electric-Arrow.png)
 
 ## PHYS 4100
