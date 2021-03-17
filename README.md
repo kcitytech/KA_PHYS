@@ -101,12 +101,17 @@ NIST:       5.670374419... x 10-8 W m-2 K-4
 
 ### Electric.py
 ```
-python 3 Electric.py
-
-# NOTE: OUTPUT HAS NOT BEEN UPDATED FOR RECENT CODE CHANGES.
-
+python3 Electric.py
+5.21: Electric field of a charge distribution
 ```
 ![Electric-Points](Output/Electric-Points.png)
+![Electric-Arrow](Output/Electric-Arrow.png)
+
+```
+python3 Electric.py --widecolor
+5.21: Electric field of a charge distribution
+```
+![Electric-Widecolor](Output/Electric-Points-Widecolor.png)
 ![Electric-Arrow](Output/Electric-Arrow.png)
 
 ## PHYS 4100
