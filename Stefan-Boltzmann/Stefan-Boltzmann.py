@@ -27,7 +27,7 @@ def thermalEnergyPerSecond(omega, T):
     kb   = const.k_B
     
     # Apply units to arguments.
-    omega *= 1 # TODO: Is this dimensionless? u.rad / u.s?
+    omega *= 1 * u.Hz
     T     *= u.K # Kelvin
     
     # Create equation using dimensioned constants.

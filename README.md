@@ -88,14 +88,13 @@ sys	0m0.195s
 
 ### Stefan-Boltzmann.py
 
-# NOTE: OUTPUT HAS NOT BEEN UPDATED FOR RECENT CODE CHANGES.
-
 ```
-python3 Stefan-Boltzmann.py 
-WARNING: Units returned do not match.
-Calculated: 5.670374419184432e-08 J / (K4 m2 s)
-Scipy:      5.6703744191844314e-08 W / (K4 m2)
-NIST:       5.670374419... x 10-8 W m-2 K-4
+python3 Stefan-Boltzmann.py
+Exercise 5.12: The Stefan–Boltzmann constant
+Calculated             : 5.670374419184432e-08 J / (K4 m2 s)
+Calculated (same units): 5.670374419184432e-08 W / (K4 m2)
+Scipy                  : 5.6703744191844314e-08 W / (K4 m2)
+NIST                   : 5.670374419... x 10-8 W m-2 K-4
 ```
 ![PlancksLaw](Output/PlancksLaw.png)
 
