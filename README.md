@@ -113,6 +113,13 @@ python3 Electric.py --widecolor
 ![Electric-Points-Widecolor](Output/Electric-Points-Widecolor.png)
 ![Electric-Arrow](Output/Electric-Arrow.png)
 
+### Fourier.py
+```
+python3 Fourier.py
+Fourier Graphs
+```
+![Fourier](Output/Fourier.png)
+
 ## PHYS 4100
 
 ### BallDropTime.py
