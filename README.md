@@ -355,3 +355,19 @@ Actual Approximate Roots:0.0337652428984239860938492 0.1693953067668677431693002
 ```
 
 ![Polynomial](Output/Polynomial.png)
+
+### Sunspots.py
+```
+python3 Sunspots.py
+Roughly 4 cycles take place in a 40 year period. This means a cycle takes about 10 years or 120 months.
+The highest frequency occurs as k=25 which corresponds to 100/25 -> 4.
+```
+
+![Sunspots](Output/Sunspots.png)
+
+### Dow.py
+```
+python3 Dow.py
+```
+
+![Dow](Output/Dow.png)
