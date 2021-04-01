@@ -120,6 +120,33 @@ Fourier Graphs
 ```
 ![Fourier](Output/Fourier.png)
 
+### Brownian.py
+
+```
+python3 Brownian.py --h
+usage: Brownian.py [-h] [--multiaxismovement] [--displayinteractive]
+
+Create an animation of brownian motion.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --multiaxismovement   Limit particle to movement along one axis per step.
+  --displayinteractive  Open a window with resultant animation.
+```
+
+```
+python3 Brownian.py
+MovieWriter ffmpeg unavailable; using Pillow instead
+```
+![Brownian-Single-Axis](Output/Brownian-Single-Axis.gif)
+
+
+```
+python3 Brownian.py --multiaxismovement
+MovieWriter ffmpeg unavailable; using Pillow instead.
+```
+![Brownian-Multi-Axis](Output/Brownian-Multi-Axis.gif)
+
 ## PHYS 4100
 
 ### BallDropTime.py
