@@ -30,11 +30,11 @@ def electricPotentials(pointCharge, distances):
     return [electricPotential(pointCharge, distance).value for distance in distances]
 
 
-def square100cmGrid():
+def squareGrid(size_in_cm=100):
     '''Create a grid of the specified dimensions and scale.'''
 
     # Create 2D grid of x/y coordinate for each point.
-    sameInterval = np.linspace(-1, 1, num=100)
+    sameInterval = np.linspace(-1, 1, num=size_in_cm)
     xs, ys = np.meshgrid(sameInterval, sameInterval)
     return xs, ys
 
@@ -58,7 +58,7 @@ def gridVoltagesDueToPointCharge(charge, distances):
 
     # Calculate list of voltages, unraveling for simplicity then reshaping to row array.
     voltages = electricPotentials(charge, np.ravel(distances))
-    shapedVoltages = np.array(voltages).reshape(100, 100)
+    shapedVoltages = np.array(voltages).reshape(distances.shape[0], distances.shape[1])
     return shapedVoltages
 
 
@@ -141,7 +141,7 @@ def plotPointCharges(pointCharges):
     plt.legend(loc=1)
 
 
-def plotElectricField(xs, ys, xArrow, yArrow, logMagnitude, pointCharges=None):
+def plotElectricField(xs, ys, xArrow, yArrow, logMagnitude, pointCharges=None,width=0.002):
     '''Plot electric field due to point charges as grid of arrows with coloring.'''
 
     # Configure general graphing options.
@@ -154,7 +154,7 @@ def plotElectricField(xs, ys, xArrow, yArrow, logMagnitude, pointCharges=None):
     plt.ylim(-1, 1)
 
     # Plot arrows on quiver plot. Using tight layout will remove top/bottom whitespace padding.
-    plt.quiver(xs, ys, xArrow, yArrow, logMagnitude, cmap='hsv')
+    plt.quiver(xs, ys, xArrow, yArrow, logMagnitude, cmap='hsv',width=0.002)
 
     # If the point charges are provided plot to create legend.
     if pointCharges is not None:
@@ -192,13 +192,38 @@ def arrowComponentsForXandYComponents(xComponents, yComponents):
 
     # Compute log of magnitude to better utilize plot coloring without having to deal with range.
     logMagnitude = np.log(magnitude)
-
+    
     # Plot the arrows with scaling to fit on grid.
     scaling = 0.02
     xArrow = scaling*normalizedXComp
     yArrow = scaling*normalizedYComp
 
     return xArrow, yArrow, logMagnitude
+
+def plotDesiredArrowGraph(xs, ys, xArrow, yArrow, logMagnitude, pointCharges):
+
+    # Create new arrays for graphing with fewer arrows.
+    new_xs = []
+    new_ys = []
+    new_xArrow = []
+    new_yArrow = []
+    new_logMagnitude = []
+
+    # Specify interval for graphing (indexes to place arrows at).
+    interval = np.arange(0,100,5)
+
+    # Iterate indexes to only add specified intervals for rows and columns.
+    for index in interval:
+
+        # Add values to the new array.
+        new_xs.append(xs[index][interval])
+        new_ys.append(ys[index][interval])
+        new_xArrow.append(xArrow[index][interval])
+        new_yArrow.append(yArrow[index][interval])
+        new_logMagnitude.append(logMagnitude[index][interval])
+
+    # Create an electric field with new values.
+    plotElectricField(new_xs, new_ys, new_xArrow, new_yArrow, new_logMagnitude, pointCharges)
 
 
 if __name__ == "__main__":
@@ -215,7 +240,7 @@ if __name__ == "__main__":
     assert(np.ceil(electricPotential(1e-9, 1).value) == 9)
 
     # Create a grid to place point charges on.
-    xs, ys = square100cmGrid()
+    xs, ys = squareGrid(size_in_cm=100)
 
     # Create a point charge and calculate distances for every point.
     pointChargeA = pointCharge(-.1, 0, 1*1e9)
@@ -236,6 +261,9 @@ if __name__ == "__main__":
     xComponents, yComponents = calculateXYComponentsForPointCharges(pointCharges, xs, ys)
     xArrow, yArrow, logMagnitude = arrowComponentsForXandYComponents(xComponents, yComponents)
 
-    # Generate plots.
+    # Plot electric potential.
     plotElectricPotential(xs, ys, voltageColors, pointCharges)
     plotElectricField(xs, ys, xArrow, yArrow, logMagnitude, pointCharges)
+    
+    # Plot using request to include fewer (but larger arrows).
+    plotDesiredArrowGraph(xs, ys, xArrow, yArrow, logMagnitude, pointCharges)

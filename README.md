@@ -87,7 +87,6 @@ sys	0m0.195s
 ```
 
 ### Stefan-Boltzmann.py
-
 ```
 python3 Stefan-Boltzmann.py
 Exercise 5.12: The Stefan–Boltzmann constant
@@ -99,12 +98,16 @@ NIST                   : 5.670374419... x 10-8 W m-2 K-4
 ![PlancksLaw](Output/PlancksLaw.png)
 
 ### Electric.py
+
+# Note: Updated per feedback about arrow size and quantity.
+
 ```
 python3 Electric.py
 5.21: Electric field of a charge distribution
 ```
 ![Electric-Points](Output/Electric-Points.png)
 ![Electric-Arrow](Output/Electric-Arrow.png)
+![Electric-Arrow-Comments](Output/Electric-Arrow-Comments.png)
 
 ```
 python3 Electric.py --widecolor
@@ -112,6 +115,15 @@ python3 Electric.py --widecolor
 ```
 ![Electric-Points-Widecolor](Output/Electric-Points-Widecolor.png)
 ![Electric-Arrow](Output/Electric-Arrow.png)
+![Electric-Arrow-Comments](Output/Electric-Arrow-Comments.png)
+
+### PotentialWell.py
+
+# Note: Fixed issue with lines 101/102 (not sure why runs on my machine).
+```
+Exercise 6.14
+Energy Levels: [0.759375, 1.259375, 4.5992187499999995, 5.0992187499999995, 7.849365234375, 11.2490234375]
+```
 
 ### Fourier.py
 ```
@@ -121,7 +133,6 @@ Fourier Graphs
 ![Fourier](Output/Fourier.png)
 
 ### Brownian.py
-
 ```
 python3 Brownian.py --h
 usage: Brownian.py [-h] [--multiaxismovement] [--displayinteractive]
@@ -140,12 +151,26 @@ MovieWriter ffmpeg unavailable; using Pillow instead
 ```
 ![Brownian-Single-Axis](Output/Brownian-Single-Axis.gif)
 
-
 ```
 python3 Brownian.py --multiaxismovement
 MovieWriter ffmpeg unavailable; using Pillow instead.
 ```
 ![Brownian-Multi-Axis](Output/Brownian-Multi-Axis.gif)
+
+### Importance-Sampling.py
+```
+python3 Importance-Sampling.py
+Calculated value: 0.8387476158806901
+    Actual value: 0.8389329600133814...
+```
+![Importance-Sampling](Output/Importance-Sampling.png)
+
+### Cannonball.py
+```
+python3 Cannonball.py
+```
+![Cannonballs-matplotlib](Output/Cannonballs-matplotlib.png)
+![Cannonballs-plotly](Output/Cannonballs-plotly.png)
 
 ## PHYS 4100
 

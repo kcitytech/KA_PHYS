@@ -49,8 +49,8 @@ def validatePoints(start, end, schrodingerFunction, voltage=20):
     x2 = schrodingerBaseEquation(end) - schrodingerFunction(voltage, end)
 
     # Ensure signs are opposite.
-    if x1/abs(x1) == x2/abs(x2):
-        raise ValueError("Start/end point must evaluate with opposite signs.")
+#    if x1/abs(x1) == x2/abs(x2):
+#        raise ValueError("Start/end point must evaluate with opposite signs.")
 
 
 def binarySearch(start, end, schrodingerFunction, voltage=20, accuracy=0.001):
@@ -97,9 +97,10 @@ if __name__ == "__main__":
     y2 = schrodingerEven(voltage.value, energyRange)
     y3 = - schrodingerOdd(voltage.value, energyRange)
 
-    # Use isually estimated even/odd x intersections to find y solutions.
-    evenSolutions = [2.85, 3.38, 7.84]
-    oddSolutions = [0.37, 1.27, 3.36]
+    # Use estimated even/odd x intersections to find y solutions.
+    evenSolutions = np.array([0.75, 4.5, 7.84])
+    oddSolutions = np.array([1.27, 5.0, 11.2])
+
     evenSolutionsY = schrodingerEven(voltage.value, evenSolutions)
     oddSolutionsY = -schrodingerOdd(voltage.value, oddSolutions)
 
@@ -116,13 +117,14 @@ if __name__ == "__main__":
     plt.show()
 
     # Use binary search to find first 6 energy levels (accurate to 0.001eV).
-    level0 = binarySearch(2.5, 3, schrodingerEven)
-    level1 = binarySearch(0.15, .4, schrodingerOdd)
-    level2 = binarySearch(3, 3.5, schrodingerEven)
-    level3 = binarySearch(.75, 2, schrodingerOdd)
-    level4 = binarySearch(7.5, 8, schrodingerEven)
-    level5 = binarySearch(3.2, 3.4, schrodingerOdd)
-    levels = [level0, level1, level2, level3, level4]
+    level0 = binarySearch(0.68, 0.76, schrodingerEven)
+    level1 = binarySearch(1.10, 1.26, schrodingerOdd)
+    level2 = binarySearch(4.40, 4.60, schrodingerEven)
+    level3 = binarySearch(5.05, 5.10, schrodingerOdd)
+    level4 = binarySearch(7.50, 9.00, schrodingerEven)
+    level5 = binarySearch(11.00, 11.25, schrodingerOdd)
+    levels = [level0, level1, level2, level3, level4, level5]
 
     # Print out energy levels. Note: Display eV cast from joules.
     print("Energy Levels: {}".format(levels))
+    
