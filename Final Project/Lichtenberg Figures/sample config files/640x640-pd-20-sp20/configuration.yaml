@@ -1,0 +1,43 @@
+# Lichtenberg Configuration Options
+
+#################################
+## Graph Configuration Options ##
+#################################
+
+# Points per meter (.01 = 1 point per centimeter).
+point_to_meter_ratio: .01
+
+# Point resolution in x axis.
+grid_resolution_x_points: 640
+
+# Point resolution in y axis.
+grid_resolution_y_points: 640
+
+# Initial particle(s) position mask.
+initial_particles: [ [5,5] ]
+
+#####################################
+## Animation Configuration Options ##
+#####################################
+
+# Number of timesteps to run program for.
+timesteps: 1000
+
+# Inverval at which to capture frame at.
+capture_interval: 100
+
+# Delay in milliseconds between frames.
+frame_delay_ms: 100
+
+# Delay in milliseconds before animation loops.
+repeat_delay_ms: 1000
+
+#####################################
+## Simulation Configuration Options ##
+#####################################
+
+# Density of particles used for simulation, (0 = No particles)
+initial_particle_density: .20 # Good value is ~.5
+
+# Probability that particle will stick (0 = Never sticks)
+stickiness_probability: 0.20
